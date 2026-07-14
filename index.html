@@ -1,316 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mirha Beauty Saloon & Training Centre</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mirha Beauty Saloon &amp; Training Centre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<!-- Cinematic Intro: Brush on Cheek -->
-  <div id="intro" class="intro" aria-hidden="false">
-    <div class="intro-vignette"></div>
-    <div class="intro-grain"></div>
-    <div class="intro-content">
-      <div class="intro-portrait">
-        <img src="assets/hero-girl.png" alt="Mirha Beauty Saloon" class="intro-girl" id="introGirl">
-        <div class="blush-overlay" id="blushOverlay">
-          <div class="blush-spot blush-left"></div>
-          <div class="blush-spot blush-right"></div>
-        </div>
-        <div class="blush-particles" id="blushParticles"></div>
-        <div class="makeup-brush" id="makeupBrush">
-          <svg viewBox="0 0 120 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="bristleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#f8c4d0"/>
-                <stop offset="50%" stop-color="#e8879b"/>
-                <stop offset="100%" stop-color="#d4738f"/>
-              </linearGradient>
-              <linearGradient id="handleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#1a0f14"/>
-                <stop offset="50%" stop-color="#3d2a32"/>
-                <stop offset="100%" stop-color="#1a0f14"/>
-              </linearGradient>
-            </defs>
-            <ellipse cx="60" cy="42" rx="38" ry="32" fill="url(#bristleGrad)" opacity="0.95"/>
-            <ellipse cx="60" cy="38" rx="28" ry="22" fill="#ffc0cb" opacity="0.4"/>
-            <rect x="52" y="68" width="16" height="8" rx="2" fill="#c9a227"/>
-            <rect x="54" y="76" width="12" height="180" rx="4" fill="url(#handleGrad)"/>
-            <ellipse cx="60" cy="262" rx="14" ry="8" fill="#c9a227" opacity="0.8"/>
-          </svg>
-        </div>
-      </div>
-      <div class="intro-text">
-        <p class="intro-tagline">Where Beauty Meets Artistry</p>
-        <h1 class="intro-title">
-          <span class="title-line">Mirha Beauty</span>
-          <span class="title-line accent">Saloon & Training Centre</span>
-        </h1>
-      </div>
+
+<!-- ===================== INTRO / BRUSH REVEAL ===================== -->
+<div class="intro" id="intro">
+  <div class="intro-stage">
+    <svg class="face-art" viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <clipPath id="blushClip">
+          <rect id="blushRect" x="240" y="210" width="0" height="0" rx="40"/>
+        </clipPath>
+        <radialGradient id="blushGrad" cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stop-color="#ff8fb3"/>
+          <stop offset="100%" stop-color="#ff6b9d" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="faceGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#3a1226"/>
+          <stop offset="100%" stop-color="#2d0a1f"/>
+        </linearGradient>
+      </defs>
+
+      <!-- face / profile silhouette -->
+      <path class="face-path" d="M120 90
+        C 100 40, 170 10, 220 20
+        C 300 35, 330 100, 320 160
+        C 340 170, 345 195, 325 205
+        C 320 240, 300 265, 275 285
+        C 280 320, 300 345, 330 360
+        C 260 400, 180 400, 140 360
+        C 120 330, 115 290, 118 260
+        C 90 240, 80 190, 95 150
+        C 100 120, 108 100, 120 90 Z"
+        fill="url(#faceGrad)" stroke="#ff9fc0" stroke-width="1.5"/>
+
+      <!-- eyelash / lash flick -->
+      <path class="lash" d="M255 175 C 268 168, 282 168, 292 174" fill="none" stroke="#ffd1dc" stroke-width="3" stroke-linecap="round"/>
+      <circle class="eye" cx="252" cy="182" r="4.5" fill="#ffd1dc"/>
+
+      <!-- lips -->
+      <path class="lips" d="M235 250 C 250 244, 268 244, 280 250 C 268 262, 250 262, 235 250 Z" fill="#c9184a"/>
+
+      <!-- blush bloom revealed by brush -->
+      <circle class="blush-glow" cx="270" cy="230" r="55" fill="url(#blushGrad)" clip-path="url(#blushClip)"/>
+
+      <!-- brush -->
+      <g class="brush" transform="translate(60,340) rotate(-32)">
+        <rect x="0" y="0" width="18" height="130" rx="8" fill="#f4c9d6"/>
+        <rect x="0" y="0" width="18" height="46" rx="8" fill="#ff6b9d"/>
+        <rect x="-3" y="120" width="24" height="55" rx="10" fill="#7a1f3d"/>
+        <ellipse cx="9" cy="-6" rx="13" ry="20" fill="#ffb6cf"/>
+      </g>
+    </svg>
+
+    <div class="intro-word" aria-hidden="true">
+      <span>M</span><span>I</span><span>R</span><span>H</span><span>A</span>
     </div>
-    <div class="intro-progress">
-      <div class="intro-progress-bar" id="introProgress"></div>
-    </div>
+    <p class="intro-tag">Beauty Saloon &amp; Training Centre</p>
   </div>
 
-  <div id="mainSite" class="main-site hidden">
-    <div class="petals-container" id="petalsContainer" aria-hidden="true"></div>
-
-    <nav class="navbar" id="navbar">
-      <div class="nav-inner">
-        <a href="#home" class="logo">
-          <span class="logo-icon">✦</span>
-          <span class="logo-text">Mirha Beauty</span>
-        </a>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#training">Training</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <a href="tel:03254016157" class="nav-cta">Call Now</a>
-      </div>
-    </nav>
-
-    <section id="home" class="hero">
-      <div class="hero-bg">
-        <div class="hero-orb hero-orb-1"></div>
-        <div class="hero-orb hero-orb-2"></div>
-        <div class="hero-orb hero-orb-3"></div>
-      </div>
-      <div class="hero-grid">
-        <div class="hero-copy reveal">
-          <span class="hero-badge">Premium Beauty Experience</span>
-          <h1>Elevate Your <em>Natural</em> Radiance</h1>
-          <p>Expert beauty services and professional training under one roof. Discover the art of transformation at Mirha Beauty Saloon & Training Centre.</p>
-          <div class="hero-actions">
-            <a href="#services" class="btn btn-primary">Our Services</a>
-            <a href="#training" class="btn btn-outline">Join Training</a>
-          </div>
-          <div class="hero-stats">
-            <div class="stat">
-              <strong data-count="500">0</strong>
-              <span>Happy Clients</span>
-            </div>
-            <div class="stat">
-              <strong data-count="50">0</strong>
-              <span>Students Trained</span>
-            </div>
-            <div class="stat">
-              <strong data-count="15">0</strong>
-              <span>Services Offered</span>
-            </div>
-          </div>
-        </div>
-        <div class="hero-visual reveal delay-2">
-          <div class="hero-frame">
-            <img src="assets/hero-girl.png" alt="Beauty at Mirha Saloon">
-            <div class="hero-frame-glow"></div>
-            <div class="hero-frame-ring"></div>
-          </div>
-        </div>
-      </div>
-      <div class="scroll-indicator">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
-      </div>
-    </section>
-
-    <section id="services" class="services section">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">What We Offer</span>
-          <h2>Our Signature Services</h2>
-          <p>Indulge in luxurious treatments crafted to enhance your natural beauty.</p>
-        </div>
-        <div class="services-grid">
-          <article class="service-card reveal">
-            <div class="service-icon">💄</div>
-            <h3>Bridal Makeup</h3>
-            <p>Stunning bridal looks that last all day — soft glam, traditional, and contemporary styles.</p>
-            <span class="service-tag">Most Popular</span>
-          </article>
-          <article class="service-card reveal delay-1">
-            <div class="service-icon">✂️</div>
-            <h3>Hair Styling</h3>
-            <p>Cut, color, blow-dry, and elegant updos tailored to your face shape and occasion.</p>
-          </article>
-          <article class="service-card reveal delay-2">
-            <div class="service-icon">💅</div>
-            <h3>Nail Art</h3>
-            <p>Manicures, pedicures, gel extensions, and creative nail designs for every mood.</p>
-          </article>
-          <article class="service-card reveal delay-3">
-            <div class="service-icon">🧖‍♀️</div>
-            <h3>Facial & Skincare</h3>
-            <p>Deep cleansing, whitening, anti-aging, and glow facials using premium products.</p>
-          </article>
-          <article class="service-card reveal delay-1">
-            <div class="service-icon">👁️</div>
-            <h3>Threading & Waxing</h3>
-            <p>Precision eyebrow shaping, full face threading, and gentle waxing services.</p>
-          </article>
-          <article class="service-card reveal delay-2">
-            <div class="service-icon">✨</div>
-            <h3>Party Makeup</h3>
-            <p>Bold, camera-ready looks for weddings, events, and special celebrations.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="training" class="training section">
-      <div class="training-bg"></div>
-      <div class="container">
-        <div class="training-layout">
-          <div class="training-copy reveal">
-            <span class="section-label light">Learn With Us</span>
-            <h2>Professional Beauty Training Centre</h2>
-            <p>Turn your passion into a profession. Our certified courses cover makeup artistry, hairstyling, skincare, and salon management — with hands-on practice and real client exposure.</p>
-            <ul class="training-list">
-              <li>Basic to Advanced Makeup Course</li>
-              <li>Bridal & Party Makeup Specialization</li>
-              <li>Hair Cutting & Styling Diploma</li>
-              <li>Skincare & Facial Techniques</li>
-              <li>Salon Management & Client Handling</li>
-            </ul>
-            <a href="tel:03254016157" class="btn btn-light">Enroll Today</a>
-          </div>
-          <div class="training-cards reveal delay-2">
-            <div class="training-card">
-              <span class="training-num">01</span>
-              <h4>Expert Instructors</h4>
-              <p>Learn from industry professionals with years of salon experience.</p>
-            </div>
-            <div class="training-card">
-              <span class="training-num">02</span>
-              <h4>Hands-On Practice</h4>
-              <p>Real models, live sessions, and portfolio-building opportunities.</p>
-            </div>
-            <div class="training-card">
-              <span class="training-num">03</span>
-              <h4>Certificate Provided</h4>
-              <p>Receive a recognized certificate upon successful course completion.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery" class="gallery section">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Our Work</span>
-          <h2>Beauty Gallery</h2>
-          <p>A glimpse into the transformations we create every day.</p>
-        </div>
-        <div class="gallery-grid">
-          <div class="gallery-item reveal wide">
-            <div class="gallery-placeholder" style="background: linear-gradient(135deg, #f5aec0, #d4738f);">
-              <span>Bridal Glam</span>
-            </div>
-          </div>
-          <div class="gallery-item reveal">
-            <div class="gallery-placeholder" style="background: linear-gradient(135deg, #ffc0cb, #e8879b);">
-              <span>Soft Glow</span>
-            </div>
-          </div>
-          <div class="gallery-item reveal delay-1">
-            <div class="gallery-placeholder" style="background: linear-gradient(135deg, #d4738f, #9b5970);">
-              <span>Party Look</span>
-            </div>
-          </div>
-          <div class="gallery-item reveal delay-2">
-            <div class="gallery-placeholder" style="background: linear-gradient(135deg, #f8c4d0, #c98b9a);">
-              <span>Hair Styling</span>
-            </div>
-          </div>
-          <div class="gallery-item reveal delay-1">
-            <div class="gallery-placeholder" style="background: linear-gradient(135deg, #e8879b, #ffb6c1);">
-              <span>Nail Art</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact section">
-      <div class="container">
-        <div class="contact-layout">
-          <div class="contact-info reveal">
-            <span class="section-label">Get In Touch</span>
-            <h2>Book Your Appointment</h2>
-            <p>Ready to look and feel your best? Call us or visit our salon today.</p>
-            <div class="contact-details">
-              <a href="tel:03254016157" class="contact-item">
-                <div class="contact-icon">📞</div>
-                <div>
-                  <strong>Phone</strong>
-                  <span>0325 4016157</span>
-                </div>
-              </a>
-              <div class="contact-item">
-                <div class="contact-icon">🕐</div>
-                <div>
-                  <strong>Opening Hours</strong>
-                  <span>Mon – Sat: 10:00 AM – 8:00 PM</span>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon">📍</div>
-                <div>
-                  <strong>Location</strong>
-                  <span>Mirha Beauty Saloon & Training Centre</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <form class="contact-form reveal delay-2" id="contactForm">
-            <div class="form-group">
-              <input type="text" id="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-              <input type="tel" id="phone" placeholder="Phone Number" required>
-            </div>
-            <div class="form-group">
-              <select id="service" required>
-                <option value="" disabled selected>Select Service</option>
-                <option>Bridal Makeup</option>
-                <option>Party Makeup</option>
-                <option>Hair Styling</option>
-                <option>Facial & Skincare</option>
-                <option>Training Course</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <textarea id="message" rows="4" placeholder="Your Message (optional)"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full">Send Inquiry</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="container footer-inner">
-        <div class="footer-brand">
-          <span class="logo-icon">✦</span>
-          <span>Mirha Beauty Saloon & Training Centre</span>
-        </div>
-        <p class="footer-copy">&copy; 2026 Mirha Beauty. All rights reserved.</p>
-        <a href="tel:03254016157" class="footer-phone">0325 4016157</a>
-      </div>
-    </footer>
+  <div class="curtain curtain-left"></div>
+  <div class="curtain curtain-right"></div>
 </div>
+
+<!-- floating petals ambience -->
+<div class="petals" id="petals"></div>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="nav" id="nav">
+  <a href="#home" class="logo">Mirha<span>.</span></a>
+  <nav class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#academy">Academy</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="tel:+923254016157" class="nav-cta">Call 0325 4016157</a>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#academy">Academy</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#testimonials">Reviews</a>
+  <a href="#contact">Contact</a>
+  <a href="tel:+923254016157" class="nav-cta">Call 0325 4016157</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="home">
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <p class="eyebrow reveal">Est. in the heart of the city</p>
+    <h1 class="hero-title">
+      <span class="line reveal">Where every face</span>
+      <span class="line reveal">tells a <em>glowing</em> story</span>
+    </h1>
+    <p class="hero-sub reveal">Bridal glam, skin therapy &amp; a professional beauty academy — all under one roof at Mirha Beauty Saloon &amp; Training Centre.</p>
+    <div class="hero-buttons reveal">
+      <a href="#contact" class="btn btn-primary">Book an Appointment</a>
+      <a href="#academy" class="btn btn-ghost">Join the Academy</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span></span>Scroll</div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="about" id="about">
+  <div class="about-media">
+    <div class="frame frame-1 fx-rise"></div>
+    <div class="frame frame-2 fx-rise"></div>
+    <div class="stat-card fx-rise">
+      <strong>12+</strong>
+      <span>Years of artistry</span>
+    </div>
+  </div>
+  <div class="about-copy">
+    <p class="eyebrow fx-rise">The Mirha touch</p>
+    <h2 class="fx-rise">Skilled hands, trained eyes, timeless results.</h2>
+    <p class="fx-rise">Mirha Beauty Saloon &amp; Training Centre was built on a simple belief — beauty care should feel like a ritual, not a rush. Our senior artists blend classic technique with modern trends, while our training wing shapes the next generation of beauticians with hands-on, certified courses.</p>
+    <ul class="about-list">
+      <li class="fx-rise"><span>✦</span>Premium, skin-safe products</li>
+      <li class="fx-rise"><span>✦</span>Certified training faculty</li>
+      <li class="fx-rise"><span>✦</span>Private bridal suites</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="services" id="services">
+  <p class="eyebrow center fx-rise">What we offer</p>
+  <h2 class="center fx-rise">Signature Services</h2>
+
+  <div class="service-grid">
+    <div class="service-card fx-rise">
+      <div class="service-icon">💄</div>
+      <h3>Bridal &amp; Party Makeup</h3>
+      <p>HD and airbrush makeup tailored to your skin tone and outfit, finished with long-wear setting techniques.</p>
+    </div>
+    <div class="service-card fx-rise">
+      <div class="service-icon">🌸</div>
+      <h3>Facials &amp; Skin Therapy</h3>
+      <p>Brightening, hydrating and anti-aging facials using dermat-approved, cruelty-free products.</p>
+    </div>
+    <div class="service-card fx-rise">
+      <div class="service-icon">💅</div>
+      <h3>Nail &amp; Hand Care</h3>
+      <p>Manicures, pedicures, nail art and gel extensions finished with a mirror-glass shine.</p>
+    </div>
+    <div class="service-card fx-rise">
+      <div class="service-icon">✂️</div>
+      <h3>Hair Styling &amp; Cuts</h3>
+      <p>Precision cuts, keratin treatments, colour correction and bridal hairstyling.</p>
+    </div>
+    <div class="service-card fx-rise">
+      <div class="service-icon">🧖‍♀️</div>
+      <h3>Threading &amp; Waxing</h3>
+      <p>Gentle, quick and precise — from brow shaping to full-body waxing.</p>
+    </div>
+    <div class="service-card fx-rise">
+      <div class="service-icon">👰</div>
+      <h3>Bridal Packages</h3>
+      <p>Complete bridal-day packages including trial sessions, skin prep and on-site touch-ups.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ACADEMY ===================== -->
+<section class="academy" id="academy">
+  <div class="academy-inner">
+    <p class="eyebrow fx-rise">Mirha Training Centre</p>
+    <h2 class="fx-rise">Become the artist behind the glow.</h2>
+    <p class="academy-copy fx-rise">Our certified courses take you from foundations to advanced technique, with real-client practice hours and a certificate recognised across the industry.</p>
+
+    <div class="course-grid">
+      <div class="course-card fx-rise">
+        <span class="course-tag">Beginner</span>
+        <h3>Basic Beautician Course</h3>
+        <p>Skincare basics, threading, waxing &amp; everyday makeup — 6 weeks.</p>
+      </div>
+      <div class="course-card fx-rise">
+        <span class="course-tag">Advanced</span>
+        <h3>Bridal Makeup Diploma</h3>
+        <p>HD/airbrush makeup, hairstyling &amp; draping — 10 weeks.</p>
+      </div>
+      <div class="course-card fx-rise">
+        <span class="course-tag">Professional</span>
+        <h3>Nail Art &amp; Extensions</h3>
+        <p>Gel, acrylic, 3D nail art and salon-ready portfolio building — 4 weeks.</p>
+      </div>
+    </div>
+    <a href="tel:+923254016157" class="btn btn-primary fx-rise">Enroll Now — 0325 4016157</a>
+  </div>
+</section>
+
+<!-- ===================== GALLERY ===================== -->
+<section class="gallery" id="gallery">
+  <p class="eyebrow center fx-rise">A glimpse inside</p>
+  <h2 class="center fx-rise">The Mirha Gallery</h2>
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="g-card g1"></div>
+      <div class="g-card g2"></div>
+      <div class="g-card g3"></div>
+      <div class="g-card g4"></div>
+      <div class="g-card g5"></div>
+      <div class="g-card g6"></div>
+      <div class="g-card g1"></div>
+      <div class="g-card g2"></div>
+      <div class="g-card g3"></div>
+      <div class="g-card g4"></div>
+      <div class="g-card g5"></div>
+      <div class="g-card g6"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="testimonials" id="testimonials">
+  <p class="eyebrow center fx-rise">Kind words</p>
+  <h2 class="center fx-rise">From our clients</h2>
+  <div class="testi-grid">
+    <div class="testi-card fx-rise">
+      <p>"My bridal makeup lasted the entire wedding night — flawless and so comfortable."</p>
+      <strong>— Ayesha K.</strong>
+    </div>
+    <div class="testi-card fx-rise">
+      <p>"Did the bridal diploma here and got hired within a month. The training is hands-on and honest."</p>
+      <strong>— Sana R.</strong>
+    </div>
+    <div class="testi-card fx-rise">
+      <p>"The facial routine genuinely transformed my skin in three sessions. Lovely, calm space."</p>
+      <strong>— Hina M.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="contact" id="contact">
+  <div class="contact-card fx-rise">
+    <p class="eyebrow">Get in touch</p>
+    <h2>Ready for your glow-up?</h2>
+    <p class="contact-copy">Call or WhatsApp us to book your appointment or reserve your seat in the next training batch.</p>
+    <a class="phone-link" href="tel:+923254016157">
+      <span class="phone-icon">📞</span> 0325 4016157
+    </a>
+    <div class="contact-actions">
+      <a href="tel:+923254016157" class="btn btn-primary">Call Now</a>
+      <a href="https://wa.me/923254016157" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-logo">Mirha<span>.</span></div>
+  <p>Beauty Saloon &amp; Training Centre</p>
+  <p class="footer-phone">📞 0325 4016157</p>
+  <p class="footer-copy">© <span id="year"></span> Mirha Beauty Saloon &amp; Training Centre. All rights reserved.</p>
+</footer>
+
 <script src="script.js"></script>
 </body>
 </html>
