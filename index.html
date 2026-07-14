@@ -1,1 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mirha Beauty Saloon &amp; Training Centre</title>
+<meta name="description" content="Mirha Beauty Saloon & Training Centre — bridal makeup, hair, skin & nail care, and professional beauty training courses. Call 0325 4016157.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23e83e8c'/%3E%3Ctext x='50' y='66' font-size='55' text-anchor='middle' fill='white' font-family='Georgia'%3EM%3C/text%3E%3C/svg%3E">
+</head>
+<body>
 
+<!-- ===================== CINEMATIC INTRO ===================== -->
+<div id="intro" aria-hidden="true">
+  <div class="intro-glow"></div>
+  <div class="intro-particles" id="introParticles"></div>
+
+  <div class="face-stage">
+    <svg class="face-svg" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="skinGrad" cx="42%" cy="35%" r="75%">
+          <stop offset="0%" stop-color="#ffe7dc"/>
+          <stop offset="60%" stop-color="#ffd3c0"/>
+          <stop offset="100%" stop-color="#f4b8a4"/>
+        </radialGradient>
+        <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#5c1636"/>
+          <stop offset="45%" stop-color="#7a1f45"/>
+          <stop offset="100%" stop-color="#3a0e21"/>
+        </linearGradient>
+        <linearGradient id="lipGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#ff6f9c"/>
+          <stop offset="100%" stop-color="#e23b6d"/>
+        </linearGradient>
+        <radialGradient id="blushGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ff8fb3" stop-opacity="0.95"/>
+          <stop offset="100%" stop-color="#ff8fb3" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="eyeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#5b2a86"/>
+          <stop offset="100%" stop-color="#2a1140"/>
+        </linearGradient>
+      </defs>
+
+      <!-- back hair -->
+      <path d="M120,330 C90,180 190,55 300,55 C410,55 510,180 480,330 C480,470 460,560 430,610 L410,470 C400,520 380,555 360,560 C375,500 372,455 360,430 C345,480 320,505 300,508 C280,505 255,480 240,430 C228,455 225,500 240,560 C220,555 200,520 190,470 L170,610 C140,560 120,470 120,330 Z" fill="url(#hairGrad)"/>
+
+      <!-- neck -->
+      <rect x="255" y="470" width="90" height="90" rx="20" fill="url(#skinGrad)"/>
+
+      <!-- face -->
+      <ellipse cx="300" cy="330" rx="148" ry="172" fill="url(#skinGrad)"/>
+
+      <!-- ears -->
+      <ellipse cx="150" cy="335" rx="16" ry="26" fill="#f4b8a4"/>
+      <ellipse cx="450" cy="335" rx="16" ry="26" fill="#f4b8a4"/>
+
+      <!-- eyebrows -->
+      <path d="M210,268 Q240,248 278,258" stroke="#4a1330" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M322,258 Q360,248 390,268" stroke="#4a1330" stroke-width="7" fill="none" stroke-linecap="round"/>
+
+      <!-- eyes -->
+      <g class="eye eye-left">
+        <path d="M212,300 Q245,278 280,300 Q245,320 212,300 Z" fill="#fff"/>
+        <circle cx="248" cy="298" r="16" fill="url(#eyeGrad)"/>
+        <circle cx="243" cy="292" r="5" fill="#fff"/>
+        <path d="M210,299 Q245,275 282,299" stroke="#2b0f19" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </g>
+      <g class="eye eye-right">
+        <path d="M320,300 Q355,278 388,300 Q355,320 320,300 Z" fill="#fff"/>
+        <circle cx="354" cy="298" r="16" fill="url(#eyeGrad)"/>
+        <circle cx="349" cy="292" r="5" fill="#fff"/>
+        <path d="M318,299 Q355,275 390,299" stroke="#2b0f19" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </g>
+
+      <!-- nose -->
+      <path d="M298,315 Q292,345 285,355 Q296,362 305,355" stroke="#e8a48d" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+      <!-- lips -->
+      <path class="lips" d="M262,392 Q300,382 338,392 Q300,414 262,392 Z" fill="url(#lipGrad)"/>
+
+      <!-- bangs -->
+      <path d="M158,275 C150,190 210,120 300,120 C390,120 450,190 442,275 C420,220 390,190 360,235 C345,205 320,190 300,232 C280,190 255,205 240,235 C210,190 180,220 158,275 Z" fill="url(#hairGrad)"/>
+
+      <!-- BLUSH reveal target (right cheek from viewer's perspective = her left) -->
+      <circle id="blushSpot" class="blush-spot" cx="222" cy="352" r="34" fill="url(#blushGrad)"/>
+
+      <!-- brush stroke path guide (invisible, used for motion) -->
+      <path id="brushPath" d="M170,330 C185,345 195,365 222,382" fill="none" stroke="none"/>
+    </svg>
+
+    <!-- makeup brush that travels across the cheek -->
+    <svg class="brush" viewBox="0 0 120 260" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="handleGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f6c9dc"/>
+          <stop offset="100%" stop-color="#e83e8c"/>
+        </linearGradient>
+      </defs>
+      <rect x="46" y="90" width="28" height="150" rx="12" fill="url(#handleGrad)"/>
+      <rect x="50" y="70" width="20" height="34" rx="6" fill="#d1a24a"/>
+      <path d="M60,10 C20,30 20,80 60,100 C100,80 100,30 60,10 Z" fill="#3a2b2b"/>
+      <path d="M60,18 C32,34 32,74 60,90 C88,74 88,34 60,18 Z" fill="#57433f"/>
+    </svg>
+  </div>
+
+  <div class="intro-copy">
+    <p class="intro-eyebrow">Bringing out your best</p>
+    <h1 class="intro-title">
+      <span>M</span><span>i</span><span>r</span><span>h</span><span>a</span>
+    </h1>
+    <p class="intro-sub">Beauty Saloon &amp; Training Centre</p>
+    <div class="intro-brush-line"></div>
+  </div>
+
+  <button id="skipIntro" type="button">Skip intro</button>
+</div>
+
+<!-- ===================== SITE WRAPPER ===================== -->
+<div id="site">
+
+  <!-- floating ambient petals -->
+  <div class="petal-field" id="petalField" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="siteNav">
+    <div class="nav-inner">
+      <a class="brand" href="#top">
+        <svg class="brand-mark" viewBox="0 0 60 60"><circle cx="30" cy="30" r="28" fill="none" stroke="currentColor" stroke-width="2"/><text x="30" y="40" text-anchor="middle" font-family="Playfair Display" font-size="26" fill="currentColor">M</text></svg>
+        <span class="brand-text">Mirha <em>Beauty Saloon &amp; Training Centre</em></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#training">Training</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-call" href="tel:03254016157">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg>
+        0325 4016157
+      </a>
+      <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true">
+      <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient id="heroGlow" cx="70%" cy="30%" r="60%">
+            <stop offset="0%" stop-color="#ff9fc4" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="#2b0f19" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="1200" height="800" fill="url(#heroGlow)"/>
+      </svg>
+    </div>
+    <div class="hero-inner">
+      <p class="eyebrow reveal">Lahore's studio for bridal glam &amp; beauty education</p>
+      <h1 class="hero-title">
+        <span class="reveal">Where every face</span>
+        <span class="reveal accent">tells a radiant story</span>
+      </h1>
+      <p class="hero-desc reveal">From bridal transformations to nail art, skin glow to professional certification —
+        Mirha Beauty Saloon &amp; Training Centre blends artistry with training, so every client leaves glowing
+        and every student leaves skilled.</p>
+      <div class="hero-cta reveal">
+        <a href="tel:03254016157" class="btn btn-primary">
+          <span class="btn-brush"></span>
+          <span class="btn-label">Call to Book · 0325 4016157</span>
+        </a>
+        <a href="#services" class="btn btn-ghost">Explore Services</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div><strong>10+</strong><span>Years of artistry</span></div>
+        <div><strong>2,000+</strong><span>Brides &amp; clients</span></div>
+        <div><strong>300+</strong><span>Trained students</span></div>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#about" aria-label="Scroll down"><span></span></a>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-head">
+      <p class="eyebrow reveal">The studio</p>
+      <h2 class="reveal">A saloon chair and a classroom seat, <span class="accent">under one roof</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <p>Mirha Beauty Saloon &amp; Training Centre was built on a simple belief: beauty work is a craft, and
+          craft deserves both an artist's hand and a teacher's patience. Our chairs host brides, everyday
+          clients and quinceañera glow-ups; our classroom hosts the next generation of makeup artists,
+          hairstylists and skin specialists.</p>
+        <p>Every service is performed with premium, skin-friendly products, and every course is taught
+          hands-on — no crowded lecture halls, just real faces, real techniques, real confidence.</p>
+        <div class="about-badges">
+          <span>Bridal Specialists</span>
+          <span>Certified Trainers</span>
+          <span>Hygienic Studio</span>
+        </div>
+      </div>
+      <div class="about-visual reveal">
+        <svg viewBox="0 0 420 420" class="vanity-illustration">
+          <defs>
+            <linearGradient id="mirrorGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ffd9e8"/>
+              <stop offset="100%" stop-color="#ff8fb3"/>
+            </linearGradient>
+          </defs>
+          <circle cx="210" cy="180" r="130" fill="none" stroke="url(#mirrorGrad)" stroke-width="14"/>
+          <circle cx="210" cy="180" r="112" fill="#3a1428"/>
+          <circle cx="175" cy="150" r="18" fill="#f4b8a4"/>
+          <path d="M140,230 Q210,150 280,230 Q250,270 210,272 Q170,270 140,230Z" fill="#7a1f45"/>
+          <!-- lipstick -->
+          <g transform="translate(70,300)">
+            <rect x="0" y="20" width="24" height="60" rx="6" fill="#e83e8c"/>
+            <rect x="0" y="0" width="24" height="24" rx="4" fill="#3a2b2b"/>
+          </g>
+          <!-- brush -->
+          <g transform="translate(320,290) rotate(20)">
+            <rect x="0" y="30" width="10" height="70" rx="4" fill="#f4c9dc"/>
+            <ellipse cx="5" cy="15" rx="16" ry="26" fill="#5c1636"/>
+          </g>
+          <!-- perfume -->
+          <g transform="translate(180,300)">
+            <rect x="0" y="10" width="30" height="46" rx="8" fill="#ffb8d2"/>
+            <rect x="10" y="0" width="10" height="14" rx="3" fill="#d1a24a"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-head">
+      <p class="eyebrow reveal">What we do</p>
+      <h2 class="reveal">Services crafted for <span class="accent">every occasion</span></h2>
+    </div>
+    <div class="services-grid">
+
+      <article class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 64 64"><path d="M32 4c14 0 22 12 22 26S46 60 32 60 10 44 10 30 18 4 32 4Z" fill="#ffe1ec"/><circle cx="24" cy="28" r="4" fill="#e83e8c"/><circle cx="40" cy="28" r="4" fill="#e83e8c"/><path d="M22 40c4 5 16 5 20 0" stroke="#e83e8c" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Bridal &amp; Party Makeup</h3>
+        <p>HD &amp; airbrush makeup, hairstyling and draping for brides, walimas and party guests.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 64 64"><path d="M12 12c10 0 18 8 20 20 2-12 10-20 20-20-4 14-4 26 0 40-10 0-18-8-20-20-2 12-10 20-20 20 4-14 4-26 0-40Z" fill="#ffd0e0"/></svg>
+        </div>
+        <h3>Hair Styling &amp; Cuts</h3>
+        <p>Precision cuts, keratin &amp; smoothing treatments, colour, and elegant updos.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 64 64"><rect x="14" y="26" width="36" height="10" rx="5" fill="#ffb8d2"/><circle cx="32" cy="18" r="8" fill="#ffe1ec"/><path d="M20 40c4 8 20 8 24 0" stroke="#e83e8c" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Facials &amp; Skin Glow</h3>
+        <p>Deep-cleansing facials, brightening peels and hydration therapy for radiant skin.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 64 64"><rect x="26" y="8" width="12" height="34" rx="6" fill="#e83e8c"/><path d="M20 40h24l-4 16H24Z" fill="#ffd0e0"/></svg>
+        </div>
+        <h3>Manicure &amp; Nail Art</h3>
+        <p>Gel polish, extensions and hand-painted nail art in every shade of pink imaginable.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 64 64"><path d="M10 20l44 24-16 4-8 14-8-14-16-4Z" fill="#ffe1ec" stroke="#e83e8c" stroke-width="2"/></svg>
+        </div>
+        <h3>Threading &amp; Brows</h3>
+        <p>Brow shaping, tinting and lamination for a perfectly framed face.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="22" fill="#ffd0e0"/><path d="M22 32a10 10 0 0 1 20 0" stroke="#e83e8c" stroke-width="3" fill="none"/></svg>
+        </div>
+        <h3>Mehndi Art</h3>
+        <p>Traditional and modern bridal mehndi designs, arabic and minimalist styles.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- TRAINING -->
+  <section class="training" id="training">
+    <div class="section-head">
+      <p class="eyebrow reveal">Learn the craft</p>
+      <h2 class="reveal">Training Centre — <span class="accent">become the artist</span></h2>
+      <p class="reveal section-sub">Certificate courses designed for beginners and working professionals, with
+        real client practice and take-home kits.</p>
+    </div>
+    <div class="training-list">
+      <div class="training-item reveal">
+        <span class="training-num">01</span>
+        <div>
+          <h3>Professional Makeup Artistry</h3>
+          <p>Bridal, HD, airbrush &amp; editorial makeup — 6 to 12 week certificate track.</p>
+        </div>
+      </div>
+      <div class="training-item reveal">
+        <span class="training-num">02</span>
+        <div>
+          <h3>Hair Styling &amp; Cutting</h3>
+          <p>Cutting techniques, colour theory, keratin treatments and bridal hairdo mastery.</p>
+        </div>
+      </div>
+      <div class="training-item reveal">
+        <span class="training-num">03</span>
+        <div>
+          <h3>Skin Care &amp; Facials</h3>
+          <p>Facial techniques, skin analysis, and product knowledge for a glowing-skin specialism.</p>
+        </div>
+      </div>
+      <div class="training-item reveal">
+        <span class="training-num">04</span>
+        <div>
+          <h3>Nail Art &amp; Extensions</h3>
+          <p>Gel, acrylic extensions and freehand nail art for salon-ready precision.</p>
+        </div>
+      </div>
+    </div>
+    <div class="training-cta reveal">
+      <a href="tel:03254016157" class="btn btn-primary"><span class="btn-brush"></span><span class="btn-label">Enroll Now · 0325 4016157</span></a>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="section-head">
+      <p class="eyebrow reveal">A peek inside</p>
+      <h2 class="reveal">Moments from the <span class="accent">studio</span></h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-card reveal">
+        <svg viewBox="0 0 300 300"><rect width="300" height="300" fill="#ffd9e8"/><circle cx="150" cy="120" r="55" fill="#ffe7dc"/><path d="M95,120a55,55 0 0 1 110,0" fill="#5c1636"/><path d="M60,300c10-70 60-110 90-110s80,40 90,110Z" fill="#ff8fb3"/></svg>
+      </div>
+      <div class="gallery-card reveal">
+        <svg viewBox="0 0 300 300"><rect width="300" height="300" fill="#ffb8d2"/><rect x="90" y="60" width="120" height="180" rx="20" fill="#fff5f8"/><circle cx="150" cy="120" r="30" fill="#e83e8c"/><rect x="130" y="160" width="40" height="60" rx="10" fill="#e83e8c"/></svg>
+      </div>
+      <div class="gallery-card reveal">
+        <svg viewBox="0 0 300 300"><rect width="300" height="300" fill="#f4c9dc"/><g transform="translate(150,150) rotate(15)"><rect x="-8" y="-10" width="16" height="120" rx="8" fill="#fff5f8"/><ellipse cx="0" cy="-40" rx="26" ry="42" fill="#5c1636"/></g></svg>
+      </div>
+      <div class="gallery-card reveal">
+        <svg viewBox="0 0 300 300"><rect width="300" height="300" fill="#ff8fb3"/><circle cx="150" cy="150" r="70" fill="none" stroke="#fff5f8" stroke-width="10"/><circle cx="150" cy="150" r="45" fill="#3a1428"/></svg>
+      </div>
+      <div class="gallery-card reveal">
+        <svg viewBox="0 0 300 300"><rect width="300" height="300" fill="#ffe1ec"/><path d="M150,60c40,0 70,40 60,90-6,30-30,50-60,50s-54-20-60-50c-10-50 20-90 60-90Z" fill="#e83e8c"/></svg>
+      </div>
+      <div class="gallery-card reveal">
+        <svg viewBox="0 0 300 300"><rect width="300" height="300" fill="#e83e8c"/><rect x="60" y="60" width="180" height="180" rx="16" fill="#fff5f8"/><path d="M90,150l40,40 80-90" stroke="#ff8fb3" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-head">
+      <p class="eyebrow reveal">Kind words</p>
+      <h2 class="reveal">Loved by <span class="accent">clients &amp; students</span></h2>
+    </div>
+    <div class="testi-track" id="testiTrack">
+      <blockquote class="testi-card reveal">
+        <p>"My bridal makeup lasted the entire wedding — flawless, and the team made me feel so calm on the big day."</p>
+        <cite>— Ayesha, Bride</cite>
+      </blockquote>
+      <blockquote class="testi-card reveal">
+        <p>"The makeup course gave me real client experience, not just theory. I started freelancing within a month of finishing."</p>
+        <cite>— Sana, Graduate Student</cite>
+      </blockquote>
+      <blockquote class="testi-card reveal">
+        <p>"Best facial I've had in Lahore. My skin genuinely glows for weeks after."</p>
+        <cite>— Hira, Regular Client</cite>
+      </blockquote>
+      <blockquote class="testi-card reveal">
+        <p>"Warm staff, clean studio, and gorgeous mehndi work for my sister's dholki."</p>
+        <cite>— Mahnoor, Client</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-copy reveal">
+        <p class="eyebrow">Get in touch</p>
+        <h2>Book your appointment <span class="accent">today</span></h2>
+        <p class="section-sub">Call or WhatsApp us directly — our team will help you pick the right service or
+          course and confirm a time that suits you.</p>
+        <a class="contact-phone" href="tel:03254016157">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg>
+          0325 4016157
+        </a>
+        <ul class="contact-meta">
+          <li><strong>Hours</strong><span>Mon – Sun, 10:00 AM – 8:00 PM</span></li>
+          <li><strong>Location</strong><span>Lahore, Punjab, Pakistan</span></li>
+        </ul>
+      </div>
+      <form class="contact-form reveal" id="contactForm">
+        <div class="form-row">
+          <label>Name
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+          <label>Phone
+            <input type="tel" name="phone" placeholder="03xx xxxxxxx" required>
+          </label>
+        </div>
+        <label>Interested in
+          <select name="interest">
+            <option>Bridal Makeup</option>
+            <option>Hair Styling</option>
+            <option>Facial &amp; Skin</option>
+            <option>Nail Art</option>
+            <option>Training Course</option>
+          </select>
+        </label>
+        <label>Message
+          <textarea name="message" rows="3" placeholder="Tell us your preferred date or question"></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary full"><span class="btn-brush"></span><span class="btn-label">Send Request</span></button>
+        <p class="form-note" id="formNote"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a class="brand" href="#top">
+        <svg class="brand-mark" viewBox="0 0 60 60"><circle cx="30" cy="30" r="28" fill="none" stroke="currentColor" stroke-width="2"/><text x="30" y="40" text-anchor="middle" font-family="Playfair Display" font-size="26" fill="currentColor">M</text></svg>
+        <span class="brand-text">Mirha <em>Beauty Saloon &amp; Training Centre</em></span>
+      </a>
+      <p>&copy; <span id="year"></span> Mirha Beauty Saloon &amp; Training Centre. All rights reserved.</p>
+      <a href="tel:03254016157">0325 4016157</a>
+    </div>
+  </footer>
+
+  <a class="float-call" href="tel:03254016157" aria-label="Call Mirha Beauty Saloon">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg>
+  </a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
