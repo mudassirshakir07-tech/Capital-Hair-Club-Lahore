@@ -3,295 +3,489 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Bright Souls School</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>The Bright Souls School | Where Every Mind Finds Its Light</title>
+<meta name="description" content="The Bright Souls School — nurturing bright, confident, kind learners from Primary to Higher Secondary.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ===== Animated star-field background layer (behind everything) ===== -->
-<canvas id="bg-canvas"></canvas>
-
-<!-- ===== NAVBAR ===== -->
+<!-- ============ NAVBAR ============ -->
 <header class="navbar" id="navbar">
-  <div class="nav-inner">
+  <div class="container nav-inner">
     <a href="#top" class="brand">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 64 64" class="cap-svg">
-          <path class="cap-top" d="M32 8 L60 20 L32 32 L4 20 Z"></path>
-          <path class="cap-strap" d="M18 25 V40 Q32 50 46 40 V25"></path>
-          <circle class="cap-tassel" cx="60" cy="20" r="2.6"></circle>
-          <line class="cap-tassel-string" x1="60" y1="20" x2="60" y2="34"></line>
-        </svg>
-        <svg viewBox="0 0 24 24" class="spark-svg">
-          <path d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z"></path>
-        </svg>
-      </span>
-      <span class="brand-text">The Bright Souls School</span>
+      <svg class="logo-mark" viewBox="0 0 60 60" fill="none">
+        <g class="ray">
+          <circle cx="30" cy="30" r="10" fill="#E8B647"/>
+          <g stroke="#E8B647" stroke-width="2.4" stroke-linecap="round">
+            <line x1="30" y1="4" x2="30" y2="12"/>
+            <line x1="30" y1="48" x2="30" y2="56"/>
+            <line x1="4" y1="30" x2="12" y2="30"/>
+            <line x1="48" y1="30" x2="56" y2="30"/>
+            <line x1="11" y1="11" x2="16.5" y2="16.5"/>
+            <line x1="43.5" y1="43.5" x2="49" y2="49"/>
+            <line x1="49" y1="11" x2="43.5" y2="16.5"/>
+            <line x1="16.5" y1="43.5" x2="11" y2="49"/>
+          </g>
+        </g>
+        <path d="M20 27l10-5 10 5-10 5-10-5z" fill="#0A1F44"/>
+        <path d="M20 27v6l10 5 10-5v-6" stroke="#0A1F44" stroke-width="1.6" fill="none" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-name">The Bright Souls School<small>Nurture · Enlighten · Excel</small></span>
     </a>
 
-    <nav class="nav-links" id="nav-links">
-      <a href="#about">About</a>
-      <a href="#programs">Programs</a>
-      <a href="#why-us">Why Us</a>
-      <a href="#voices">Voices</a>
-      <a href="#contact">Contact</a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#programs">Academics</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#campus">Campus Life</a></li>
+        <li><a href="#testimonials">Voices</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
 
-    <a href="tel:+923001111690" class="nav-cta">
-      <svg viewBox="0 0 24 24" class="phone-icon"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.9c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1L6.6 10.8z"></path></svg>
-      <span>+92 300 1111690</span>
-    </a>
-
-    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-cta">
+      <a href="tel:+923001111690" class="nav-phone">
+        <span class="pulse-dot"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.9.34 1.78.66 2.61a2 2 0 01-.45 2.11L8.09 9.68a16 16 0 006.23 6.23l1.24-1.23a2 2 0 012.11-.45c.83.32 1.71.54 2.61.66A2 2 0 0122 16.92z"/></svg>
+        <span>+92 300 1111690</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
+<!-- ============ HERO ============ -->
 <section class="hero" id="top">
-  <div class="hero-inner">
-    <div class="hero-copy reveal">
-      <p class="eyebrow">Admissions Open · 2026&ndash;2027 Session</p>
-      <h1>Where every <span class="glow-text">bright soul</span> learns to shine</h1>
-      <p class="hero-sub">The Bright Souls School nurtures curious minds from the first spark of wonder to confident, capable graduates &mdash; through caring teachers, purposeful learning, and a community that believes in every child.</p>
+  <div class="starfield" id="starfield"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Admissions Open · 2026&ndash;27</span>
+      <h1>Where every <em>mind</em> finds its light.</h1>
+      <p class="lead">The Bright Souls School blends warm mentorship, modern classrooms, and a genuine love of learning — helping every child grow into a curious, confident, kind human being.</p>
       <div class="hero-actions">
-        <a href="tel:+923001111690" class="btn btn-primary">
-          <svg viewBox="0 0 24 24" class="phone-icon"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.9c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1L6.6 10.8z"></path></svg>
-          Call +92 300 1111690
+        <a href="#contact" class="btn btn-primary"><span>Enroll Your Child</span></a>
+        <a href="tel:+923001111690" class="btn btn-outline">
+          <span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.9.34 1.78.66 2.61a2 2 0 01-.45 2.11L8.09 9.68a16 16 0 006.23 6.23l1.24-1.23a2 2 0 012.11-.45c.83.32 1.71.54 2.61.66A2 2 0 0122 16.92z"/></svg>
+            Call +92 300 1111690
+          </span>
         </a>
-        <a href="#programs" class="btn btn-ghost">Explore Programs</a>
       </div>
 
       <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-num" data-count="18">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Years of Learning</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num" data-count="1200">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Bright Students</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num" data-count="60">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Dedicated Teachers</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num" data-count="98">0</span><span class="stat-percent">%</span>
-          <span class="stat-label">Exam Success Rate</span>
-        </div>
+        <div><strong data-count="1200" data-suffix="+">0</strong><span>Bright Souls Enrolled</span></div>
+        <div><strong data-count="60" data-suffix="+">0</strong><span>Expert Educators</span></div>
+        <div><strong data-count="18" data-suffix="">0</strong><span>Years of Excellence</span></div>
+        <div><strong data-count="97" data-suffix="%">0</strong><span>Board Exam Pass Rate</span></div>
       </div>
     </div>
 
-    <div class="hero-art reveal" aria-hidden="true">
-      <svg viewBox="0 0 420 420" class="orbit-svg">
-        <circle class="orbit-ring ring-1" cx="210" cy="210" r="150"></circle>
-        <circle class="orbit-ring ring-2" cx="210" cy="210" r="110"></circle>
+    <div class="hero-emblem">
+      <div class="emblem-glow"></div>
+      <svg class="emblem-svg" viewBox="0 0 420 380" fill="none">
+        <!-- outer rays -->
+        <g class="ray-group">
+          <g stroke="#E8B647" stroke-width="2" stroke-linecap="round" opacity="0.55">
+            <line x1="210" y1="20" x2="210" y2="55"/>
+            <line x1="210" y1="245" x2="210" y2="280"/>
+            <line x1="45" y1="150" x2="80" y2="150"/>
+            <line x1="340" y1="150" x2="375" y2="150"/>
+            <line x1="90" y1="65" x2="112" y2="87"/>
+            <line x1="308" y1="213" x2="330" y2="235"/>
+            <line x1="330" y1="65" x2="308" y2="87"/>
+            <line x1="112" y1="213" x2="90" y2="235"/>
+          </g>
+        </g>
+        <g class="ray-group reverse">
+          <circle cx="210" cy="150" r="66" stroke="#E8B647" stroke-width="1" stroke-dasharray="4 7" opacity="0.5"/>
+        </g>
+        <!-- sun -->
+        <circle cx="210" cy="150" r="46" fill="url(#sunGrad)"/>
+        <defs>
+          <radialGradient id="sunGrad" cx="35%" cy="30%" r="75%">
+            <stop offset="0%" stop-color="#F6DFA0"/>
+            <stop offset="100%" stop-color="#E8B647"/>
+          </radialGradient>
+          <linearGradient id="buildGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#14315C"/>
+            <stop offset="100%" stop-color="#0A1F44"/>
+          </linearGradient>
+        </defs>
 
-        <g class="orbit-group orbit-slow">
-          <circle class="orbit-dot dot-a" cx="210" cy="60" r="6"></circle>
-        </g>
-        <g class="orbit-group orbit-mid">
-          <circle class="orbit-dot dot-b" cx="360" cy="210" r="5"></circle>
-        </g>
-        <g class="orbit-group orbit-fast">
-          <circle class="orbit-dot dot-c" cx="210" cy="320" r="4.5"></circle>
+        <!-- graduation cap floating above -->
+        <g class="cap-float">
+          <path d="M210 96l46-20-46-20-46 20 46 20z" fill="#0A1F44"/>
+          <path d="M180 84v20c0 7 13 13 30 13s30-6 30-13V84" stroke="#0A1F44" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <line x1="256" y1="76" x2="256" y2="104" stroke="#0A1F44" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="256" cy="107" r="3.4" fill="#0A1F44"/>
         </g>
 
-        <!-- central graduation cap emblem -->
-        <g class="cap-emblem float-slow">
-          <path class="emblem-top" d="M210 150 L300 185 L210 220 L120 185 Z"></path>
-          <path class="emblem-strap" d="M165 197 V235 Q210 258 255 235 V197"></path>
-          <circle class="emblem-tassel" cx="300" cy="185" r="4.5"></circle>
-          <line class="emblem-tassel-string" x1="300" y1="185" x2="300" y2="220"></line>
-          <path class="emblem-spark" d="M210 235 L214 258 L237 262 L214 266 L210 289 L206 266 L183 262 L206 258 Z"></path>
+        <!-- school building silhouette -->
+        <g transform="translate(60,235)">
+          <rect x="0" y="0" width="300" height="90" rx="6" fill="url(#buildGrad)"/>
+          <polygon points="0,0 150,-40 300,0" fill="#0A1F44"/>
+          <rect x="140" y="-24" width="20" height="24" fill="#E8B647" opacity="0.9"/>
+          <!-- windows -->
+          <rect class="window" x="24" y="22" width="26" height="26" rx="3" fill="#E8B647"/>
+          <rect class="window" x="66" y="22" width="26" height="26" rx="3" fill="#E8B647"/>
+          <rect class="window" x="108" y="22" width="26" height="26" rx="3" fill="#E8B647"/>
+          <rect class="window" x="166" y="22" width="26" height="26" rx="3" fill="#E8B647"/>
+          <rect class="window" x="208" y="22" width="26" height="26" rx="3" fill="#E8B647"/>
+          <rect class="window" x="250" y="22" width="26" height="26" rx="3" fill="#E8B647"/>
+          <!-- door -->
+          <rect x="132" y="52" width="36" height="38" rx="3" fill="#060f27"/>
         </g>
       </svg>
     </div>
   </div>
 
-  <div class="scroll-cue" aria-hidden="true"><span></span></div>
+  <div class="scroll-cue">
+    <span>Scroll</span>
+    <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
 </section>
 
-<!-- ===== ABOUT ===== -->
+<!-- ============ ABOUT ============ -->
 <section class="about" id="about">
-  <div class="section-inner about-grid">
-    <div class="about-visual reveal" aria-hidden="true">
-      <svg viewBox="0 0 400 340" class="building-svg">
-        <rect class="bld-base" x="40" y="150" width="320" height="170"></rect>
-        <polygon class="bld-roof" points="200,60 380,150 20,150"></polygon>
-        <rect class="bld-door" x="180" y="240" width="40" height="80"></rect>
-        <rect class="bld-window w1" x="70" y="180" width="35" height="35"></rect>
-        <rect class="bld-window w2" x="130" y="180" width="35" height="35"></rect>
-        <rect class="bld-window w3" x="235" y="180" width="35" height="35"></rect>
-        <rect class="bld-window w4" x="295" y="180" width="35" height="35"></rect>
-        <rect class="bld-window w5" x="70" y="235" width="35" height="35"></rect>
-        <rect class="bld-window w6" x="295" y="235" width="35" height="35"></rect>
-        <rect class="bld-flagpole" x="198" y="20" width="4" height="45"></rect>
-        <path class="bld-flag" d="M202 22 L245 34 L202 46 Z"></path>
-      </svg>
-    </div>
-
+  <div class="container about-grid">
     <div class="about-copy reveal">
-      <p class="eyebrow">Our Story</p>
-      <h2>A school built on belief, not just books</h2>
-      <p>Founded on the idea that every child carries a light worth nurturing, The Bright Souls School blends a strong academic core with character, creativity, and confidence. Our classrooms are calm, our teachers are patient, and our expectations are high &mdash; because we believe every student deserves both.</p>
-      <ul class="about-points">
-        <li><span class="pt-dot"></span>Balanced curriculum from Early Years to Secondary</li>
-        <li><span class="pt-dot"></span>Small class sizes with individual attention</li>
-        <li><span class="pt-dot"></span>Safe, structured, and welcoming campus culture</li>
-        <li><span class="pt-dot"></span>Regular parent&ndash;teacher partnership meetings</li>
+      <span class="eyebrow">Our Story</span>
+      <h2>A school built around every child's spark</h2>
+      <p>Since our founding, The Bright Souls School has believed that every child carries a light worth nurturing — not just academically, but in character, creativity, and confidence. Our teachers know each learner by name, not just by roll number.</p>
+      <ul class="about-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Certified, highly qualified faculty across all grades</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Modern science, computer & art labs</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Safe, secure and welcoming campus</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> National & international curriculum options</li>
       </ul>
     </div>
+
+    <div class="stat-grid reveal">
+      <div class="stat-card">
+        <div class="stat-num"><span data-count="1200" data-suffix="+">0</span></div>
+        <p>Students across all campuses</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num"><span data-count="60" data-suffix="+">0</span></div>
+        <p>Dedicated teaching staff</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num"><span data-count="18" data-suffix="">0</span></div>
+        <p>Years shaping bright futures</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num"><span data-count="97" data-suffix="%">0</span></div>
+        <p>Board examination pass rate</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ===== PROGRAMS ===== -->
+<!-- ============ PROGRAMS ============ -->
 <section class="programs" id="programs">
-  <div class="section-inner">
-    <p class="eyebrow center">What We Offer</p>
-    <h2 class="center">Programs for every stage of growth</h2>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Academics</span>
+      <h2>Programs for every stage of growth</h2>
+      <p>A carefully paced curriculum that grows with your child — from first letters to final board exams.</p>
+    </div>
 
-    <div class="card-grid">
-      <article class="prog-card reveal">
-        <span class="prog-icon">
-          <svg viewBox="0 0 48 48"><path d="M24 8c-6 0-12 2-16 5v25c4-3 10-5 16-5s12 2 16 5V13c-4-3-10-5-16-5Z"></path><path d="M24 8v30"></path></svg>
-        </span>
-        <h3>Early Years</h3>
-        <p>Play-based discovery that builds curiosity, language, and social confidence from the very start.</p>
-      </article>
+    <div class="program-grid reveal-stagger">
+      <div class="program-card reveal">
+        <div class="program-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+        </div>
+        <h3>Primary Years</h3>
+        <p>Playful, hands-on learning that builds strong reading, numeracy and social foundations.</p>
+        <span class="tag">Grades 1&ndash;5</span>
+      </div>
 
-      <article class="prog-card reveal">
-        <span class="prog-icon">
-          <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"></circle><path d="M7 24h34M24 7c5 5 5 29 0 34M24 7c-5 5-5 29 0 34"></path></svg>
-        </span>
-        <h3>Primary School</h3>
-        <p>A strong foundation in literacy, numeracy, and science, taught through hands-on exploration.</p>
-      </article>
-
-      <article class="prog-card reveal">
-        <span class="prog-icon">
-          <svg viewBox="0 0 48 48"><path d="M18 6h12v10l8 20a4 4 0 0 1-4 6H14a4 4 0 0 1-4-6l8-20Z"></path><line x1="16" y1="26" x2="32" y2="26"></line></svg>
-        </span>
+      <div class="program-card reveal">
+        <div class="program-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
         <h3>Middle School</h3>
-        <p>Deeper subject mastery paired with critical thinking, research skills, and creative projects.</p>
-      </article>
-
-      <article class="prog-card reveal">
-        <span class="prog-icon">
-          <svg viewBox="0 0 48 48"><rect x="10" y="18" width="28" height="20" rx="2"></rect><path d="M16 18v-4a8 8 0 0 1 16 0v4"></path><circle cx="24" cy="28" r="3"></circle></svg>
-        </span>
-        <h3>Secondary School</h3>
-        <p>Exam-focused rigor, mentorship, and guidance to prepare every student for their next big step.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ===== WHY US ===== -->
-<section class="why-us" id="why-us">
-  <div class="section-inner why-grid">
-    <div class="why-copy reveal">
-      <p class="eyebrow">Why Families Choose Us</p>
-      <h2>Because a good school feels like a second home</h2>
-      <p>We keep our promise simple: know every child by name, teach with heart, and hold everyone &mdash; students and staff alike &mdash; to a standard of kindness and excellence.</p>
-    </div>
-
-    <div class="why-list">
-      <div class="why-item reveal">
-        <span class="why-dot"></span>
-        <div>
-          <h4>Experienced, caring faculty</h4>
-          <p>Qualified teachers who mentor as much as they instruct.</p>
-        </div>
+        <p>Subject specialization begins, alongside critical thinking and independent project work.</p>
+        <span class="tag">Grades 6&ndash;8</span>
       </div>
-      <div class="why-item reveal">
-        <span class="why-dot"></span>
-        <div>
-          <h4>Modern, safe campus</h4>
-          <p>Clean classrooms, secure premises, and attentive supervision.</p>
+
+      <div class="program-card reveal">
+        <div class="program-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H4v18h5"/><path d="M15 3h5v18h-5"/><path d="M9 3v18M15 3v18"/></svg>
         </div>
+        <h3>Secondary</h3>
+        <p>Board-aligned academics with focused exam preparation and career-orientation guidance.</p>
+        <span class="tag">Grades 9&ndash;10</span>
       </div>
-      <div class="why-item reveal">
-        <span class="why-dot"></span>
-        <div>
-          <h4>Co-curricular balance</h4>
-          <p>Sports, arts, and clubs alongside strong academics.</p>
+
+      <div class="program-card reveal">
+        <div class="program-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4.9L12 11.8 3 6.9 12 2z"/><path d="M3 12l9 4.9 9-4.9M3 17l9 4.9 9-4.9"/></svg>
         </div>
-      </div>
-      <div class="why-item reveal">
-        <span class="why-dot"></span>
-        <div>
-          <h4>Transparent communication</h4>
-          <p>Regular updates so parents are always in the loop.</p>
-        </div>
+        <h3>Higher Secondary</h3>
+        <p>Pre-Medical, Pre-Engineering & Commerce streams with dedicated university counselling.</p>
+        <span class="tag">Grades 11&ndash;12</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== TESTIMONIALS (infinite loop marquee) ===== -->
-<section class="voices" id="voices">
-  <p class="eyebrow center">Parent &amp; Student Voices</p>
-  <h2 class="center">Stories from our school community</h2>
+<!-- ============ WHY US ============ -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why Families Choose Us</span>
+      <h2>An environment where children thrive</h2>
+      <p>Every detail of our campus and curriculum is designed around one goal: helping your child become the best version of themselves.</p>
+    </div>
 
-  <div class="marquee">
-    <div class="marquee-track" id="marquee-track">
-      <blockquote class="quote-card">&ldquo;My daughter looks forward to school every single day. That says everything.&rdquo;<cite>&mdash; Parent, Grade 3</cite></blockquote>
-      <blockquote class="quote-card">&ldquo;The teachers genuinely know each child. It never feels like just a number.&rdquo;<cite>&mdash; Parent, Grade 6</cite></blockquote>
-      <blockquote class="quote-card">&ldquo;I found confidence here I didn't know I had &mdash; on stage and in the classroom.&rdquo;<cite>&mdash; Student, Grade 9</cite></blockquote>
-      <blockquote class="quote-card">&ldquo;Communication from school is clear and constant. We always know what's happening.&rdquo;<cite>&mdash; Parent, Grade 1</cite></blockquote>
-      <blockquote class="quote-card">&ldquo;A calm, structured environment that still makes room for creativity.&rdquo;<cite>&mdash; Parent, Grade 8</cite></blockquote>
+    <div class="feature-grid reveal-stagger">
+      <div class="feature-card reveal">
+        <div class="feature-orb">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Qualified Faculty</h3>
+        <p>Experienced, caring teachers dedicated to every child's growth.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-orb">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H4v18h5m6-18h5v18h-5M9 3v18m6-18v18"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <h3>Modern Labs</h3>
+        <p>Well-equipped science, computer and language labs for real discovery.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-orb">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 015 5c0 3-2 5-5 9-3-4-5-6-5-9a5 5 0 015-5z"/><circle cx="12" cy="7" r="1.6"/></svg>
+        </div>
+        <h3>Sports & Arts</h3>
+        <p>Dedicated grounds and studios so every talent finds its stage.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-orb">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+        </div>
+        <h3>Safe Campus</h3>
+        <p>CCTV-monitored, secured campus with trained support staff on site.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CONTACT ===== -->
+<!-- ============ CAMPUS LIFE ============ -->
+<section class="campus" id="campus">
+  <div class="container campus-inner">
+    <div class="campus-visual" id="campusVisual">
+      <div class="campus-badge">
+        <strong>Every Day</strong>
+        <span>Is a Chance to Shine</span>
+      </div>
+    </div>
+    <div class="campus-copy reveal">
+      <span class="eyebrow">Campus Life</span>
+      <h2>More than a classroom — a community</h2>
+      <p>From morning assemblies to science fairs, debate clubs to inter-house sports days, life at The Bright Souls School is full of moments that build character alongside academics.</p>
+      <p>Our house system, student council, and clubs (robotics, drama, nature & literary society) give every student a place to belong and lead.</p>
+      <a href="#contact" class="btn btn-navy"><span>Plan a Campus Visit</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Voices</span>
+      <h2>What our families say</h2>
+    </div>
+
+    <div class="testi-shell reveal">
+      <div class="testi-slide active">
+        <div class="testi-avatar">A</div>
+        <p class="testi-quote">"My daughter looks forward to school every single morning. The teachers genuinely know and care about who she is."</p>
+        <div class="testi-name">Ayesha Raza</div>
+        <div class="testi-role">Parent, Grade 4</div>
+      </div>
+      <div class="testi-slide">
+        <div class="testi-avatar">H</div>
+        <p class="testi-quote">"The science labs and project work pushed me to think beyond textbooks. I felt genuinely ready for board exams."</p>
+        <div class="testi-name">Hamza Tariq</div>
+        <div class="testi-role">Alumnus, Class of 2024</div>
+      </div>
+      <div class="testi-slide">
+        <div class="testi-avatar">S</div>
+        <p class="testi-quote">"From the front office to the principal's office, everyone treats families with warmth. It truly feels like a second home."</p>
+        <div class="testi-name">Sana Malik</div>
+        <div class="testi-role">Parent, Grade 8 & Grade 2</div>
+      </div>
+
+      <div class="testi-dots">
+        <button class="active" aria-label="Testimonial 1"></button>
+        <button aria-label="Testimonial 2"></button>
+        <button aria-label="Testimonial 3"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BANNER ============ -->
+<section class="cta-banner">
+  <div class="container cta-inner reveal">
+    <div>
+      <h2>Ready to see the campus for yourself?</h2>
+      <p>Admissions for the 2026&ndash;27 session are now open. Seats are limited across all grades.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="tel:+923001111690" class="btn btn-primary"><span>Call +92 300 1111690</span></a>
+      <a href="#contact" class="btn btn-outline"><span>Book a Visit</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
 <section class="contact" id="contact">
-  <div class="section-inner contact-inner reveal">
-    <p class="eyebrow center">Get in Touch</p>
-    <h2 class="center">Let's talk about your child's future</h2>
-    <p class="contact-sub center">Have a question about admissions, fees, or a campus visit? Our team is one call away.</p>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>We'd love to welcome your family</h2>
+      <p>Questions about admissions, fees, or a campus tour? Reach out — our office responds within one working day.</p>
+    </div>
 
-    <a href="tel:+923001111690" class="phone-pill">
-      <svg viewBox="0 0 24 24" class="phone-icon big"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.9c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1L6.6 10.8z"></path></svg>
-      <span>+92 300 1111690</span>
-    </a>
-    <p class="contact-note">Tap to call &mdash; our admissions desk is happy to help.</p>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <div class="contact-row">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.9.34 1.78.66 2.61a2 2 0 01-.45 2.11L8.09 9.68a16 16 0 006.23 6.23l1.24-1.23a2 2 0 012.11-.45c.83.32 1.71.54 2.61.66A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <strong>Call Admissions</strong>
+            <a href="tel:+923001111690">+92 300 1111690</a>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+          </div>
+          <div>
+            <strong>Email Us</strong>
+            <a href="mailto:info@brightsoulsschool.edu.pk">info@brightsoulsschool.edu.pk</a>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </div>
+          <div>
+            <strong>Office Hours</strong>
+            <span>Mon &ndash; Sat, 8:00 AM &ndash; 3:30 PM</span>
+          </div>
+        </div>
+
+        <div class="map-pin">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+          Main Boulevard Campus, Lahore, Pakistan
+        </div>
+      </div>
+
+      <div class="form-card reveal">
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="field">
+              <label for="pname">Parent / Student Name</label>
+              <input type="text" id="pname" placeholder="Your full name" required>
+            </div>
+            <div class="field">
+              <label for="pphone">Phone Number</label>
+              <input type="tel" id="pphone" placeholder="03XX XXXXXXX" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="pgrade">Interested Grade</label>
+            <input type="text" id="pgrade" placeholder="e.g. Grade 3">
+          </div>
+          <div class="field">
+            <label for="pmsg">Message</label>
+            <textarea id="pmsg" placeholder="Tell us how we can help..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-navy"><span>Send Inquiry</span></button>
+          <div class="form-note" id="formNote">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            Thank you! Our admissions team will contact you shortly.
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- ============ FOOTER ============ -->
 <footer class="footer">
-  <div class="section-inner footer-inner">
-    <a href="#top" class="brand footer-brand">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 64 64" class="cap-svg small">
-          <path class="cap-top" d="M32 8 L60 20 L32 32 L4 20 Z"></path>
-          <path class="cap-strap" d="M18 25 V40 Q32 50 46 40 V25"></path>
-          <circle class="cap-tassel" cx="60" cy="20" r="2.6"></circle>
-          <line class="cap-tassel-string" x1="60" y1="20" x2="60" y2="34"></line>
-        </svg>
-      </span>
-      <span class="brand-text">The Bright Souls School</span>
-    </a>
-    <p class="footer-tag">Nurturing bright souls, one lesson at a time.</p>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg class="logo-mark" viewBox="0 0 60 60" fill="none" width="38" height="38">
+            <circle cx="30" cy="30" r="10" fill="#E8B647"/>
+            <path d="M20 27l10-5 10 5-10 5-10-5z" fill="#F4F6FA"/>
+          </svg>
+          <span class="brand-name">The Bright Souls School</span>
+        </div>
+        <p>Nurturing bright, confident and kind learners since day one — because every soul deserves to shine.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 9H15V6h-1.5C11.6 6 10 7.6 10 9.5V11H8v3h2v7h3v-7h2.2l.5-3H13v-1.2c0-.5.4-.8.9-.8z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l6 3-6 3V9z" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
 
-    <nav class="footer-links">
-      <a href="#about">About</a>
-      <a href="#programs">Programs</a>
-      <a href="#why-us">Why Us</a>
-      <a href="#voices">Voices</a>
-      <a href="#contact">Contact</a>
-    </nav>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#programs">Academics</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#campus">Campus Life</a></li>
+        </ul>
+      </div>
 
-    <a href="tel:+923001111690" class="footer-phone">+92 300 1111690</a>
-    <p class="footer-copy">&copy; <span id="year"></span> The Bright Souls School. All rights reserved.</p>
+      <div>
+        <h4>Admissions</h4>
+        <ul>
+          <li><a href="#contact">Apply Now</a></li>
+          <li><a href="#testimonials">Parent Voices</a></li>
+          <li><a href="#contact">Book a Tour</a></li>
+          <li><a href="tel:+923001111690">Call Admissions</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+923001111690">+92 300 1111690</a></li>
+          <li><a href="mailto:info@brightsoulsschool.edu.pk">info@brightsoulsschool.edu.pk</a></li>
+          <li><span>Main Boulevard Campus, Lahore</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> The Bright Souls School. All rights reserved.</span>
+      <span>Designed with care for bright futures.</span>
+    </div>
   </div>
 </footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
 
 <script src="script.js"></script>
 </body>
